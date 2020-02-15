@@ -10884,3 +10884,20 @@ a.text-dark:focus {
   }
 }
 
+.transbox {
+  background-color: #ffffff;
+  opacity: 0.6;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.transbox h1,
+.transbox p {
+  font-weight: bold;
+  color: black;
+}
+
+.transbox a {
+  color: white;
+}
+

@@ -7,4 +7,17 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
-
+.transbox {
+    background-color: #ffffff;
+    opacity: 0.6;
+    padding: 20px;
+    border-radius: 8px;
+    h1,
+    p {
+        font-weight: bold;
+        color: rgba($color: #000000, $alpha: 1.0);
+    }
+    a {
+        color: rgba($color: #ffffff, $alpha: 1.0);
+    }
+}

@@ -5,121 +5,42 @@
 @section('title', 'Services')
 <!-- Set the "content" section, which will replace "@yield('content')" in the index file we're extending -->
 @section('content')
-<div class="container">
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active" id="services-tab" data-toggle="tab" href="#services" role="tab"
-                aria-controls="Servicios" aria-selected="true">Servicios</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="accepted-tab" data-toggle="tab" href="#accepted" role="tab"
-                aria-controls="Aceptados" aria-selected="false">Aceptados</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="pending-tab" data-toggle="tab" href="#pending" role="tab" aria-controls="Pendientes"
-                aria-selected="false">Pendientes</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="rejected-tab" data-toggle="tab" href="#rejected" role="tab"
-                aria-controls="Rechazados" aria-selected="false">Rechazados</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="cancelled-tab" data-toggle="tab" href="#cancelled" role="tab"
-                aria-controls="Cancelados" aria-selected="false">Cancelados</a>
-        </li>
-    </ul>
-    <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="services" role="tabpanel" aria-labelledby="services">
-            <div class="row">
-                @foreach ($all_services as $item)
-                <div class="col-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">{{$item->service_name}}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ date('d-m-Y', strtotime($item->created_at)) }}
-                            </h6>
-                            <a href="/" class="btn btn-primary">Mas Informacion</a>
-                        </div>
-                    </div>
-                </div>
-                @endforeach </div>
-        </div>
-        <div class="tab-pane fade" id="accepted" role="tabpanel" aria-labelledby="accepted">
-            <div class="row">
-                @foreach ($services_accepted as $item)
-                <div class="col-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">{{$item->service_name}}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ date('d-m-Y', strtotime($item->created_at)) }}
-                            </h6>
-                            <p class="card-text text-success">{{ $item->status_name }}</p>
-                            <p class="card-text">{{$item->total}}</p>
-                            <a href="/" class="btn btn-primary">Mas Informacion</a>
-
-                        </div>
-                    </div>
-                </div>
-                @endforeach</div>
-        </div>
-        <div class="tab-pane fade" id="pending" role="tabpanel" aria-labelledby="pending">
-            <div class="row">
-                @foreach ($services_pending as $item)
-                <div class="col-3">
-                    <form action="{{ route('services.update', $item->id) }}" method="POST">
-                        @method('PUT')
-                        @csrf
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">{{$item->service_name}}</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">
-                                    {{ date('d-m-Y', strtotime($item->created_at)) }}
-                                </h6>
-                                <p class="card-text text-info">{{ $item->status_name }}</p>
-                                <p class="card-text">El import total a pagar es de: ${{$item->total}}</p>
-                                <button type="submit" class="btn btn-success">Pagar</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                @endforeach
-            </div>
-        </div>
-        <div class="tab-pane fade" id="rejected" role="tabpanel" aria-labelledby="rejected">
-            <div class="row">
-
-                @foreach ($services_rejected as $item)
-                <div class="col-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">{{$item->service_name}}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ date('d-m-Y', strtotime($item->created_at)) }}
-                            </h6>
-                            <p class="card-text text-danger">{{ $item->status_name }}</p>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-        <div class="tab-pane fade" id="cancelled" role="tabpanel" aria-labelledby="cancelled">
-            <div class="row">
-                @foreach ($services_cancelled as $item)
-                <div class="col-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">{{$item->service_name}}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ date('d-m-Y', strtotime($item->created_at)) }}
-                            </h6>
-                            <p class="card-text text-danger">{{ $item->status_name }}</p>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
+<div class="jumbotron jumbotron-fluid text-dark"
+    style="background-image: url('https://source.unsplash.com/1600x900/?services'); background-size: cover;">
+    <div class="container transbox">
+        <h1 class="display-4">Bienvenido a la sección de servicios</h1>
+        <p class="lead">Aqui podra cargar nuevos servicios o ir a la sección de pago de servicios</p>
+        <hr class="my-4">
+        <p>Recuerde ingresar bien los datos 😎</p>
+        <a href="{{ route('service.formCreate') }}" class="btn btn-lg btn-info">Subir un
+            servicio</a>
+        <a href="{{ route('service.formPay') }}" class="btn btn-lg btn-success">Pagar
+            servicio</a>
     </div>
+</div>
+<div class="container">
+    <div class="row">
+        @foreach ($services as $item)
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="card  border-success mb-3">
+                <h5 class="card-header text-center text-muted">
+                    Acciones
+                </h5>
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{$item->service_name}}</h5>
+                    <p class="card-text">Código de referencia {{ $item->reference_number }}</p>
 
-
+                    {{-- <a href="{{ route('investment.sell', ['id' => $item->id]) }}"
+                    class="btn btn-block btn-info text-white">Vender</a>
+                    <a href="{{ route('investment.buy', ['id' => $item->id]) }}"
+                        class="btn btn-block btn-success">Comprar</a> --}}
+                </div>
+                <div class="card-footer text-center text-muted">
+                    <h6 class="card-subtitle mb-2 text-muted">{{ date('d-m-Y', strtotime($item->created_at)) }}</h6>
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
 </div>
 @endsection

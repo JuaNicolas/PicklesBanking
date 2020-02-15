@@ -13,16 +13,20 @@
                 <li class="nav-item {{ request()->is('balance*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ url('dashboard/balance')}}">Balance</a>
                 </li>
+                {{-- <a href="{{ route('service.formCreate') }}" class="btn btn-lg btn-info">Subir un
+                    servicio</a>
+                <a href="{{ route('service.formPay') }}" class="btn btn-lg btn-success">Pagar
+                    servicio</a> --}}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Servicios
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="{{ route('service.formPay') }}">Pagar Servicios</a>
+                        <a class="dropdown-item" href="{{ route('service.formCreate') }}">Crear Servicio</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="{{ route('service.index') }}">Ver servicios disponibles</a>
                     </div>
                 </li>
                 <li class="nav-item {{ (request()->is('services*')) ? 'active' : '' }}">

@@ -5,15 +5,20 @@
 @section('title', 'Balance')
 <!-- Set the "content" section, which will replace "@yield('content')" in the index file we're extending -->
 @section('content')
-<div class="jumbotron">
-    <h1 class="display-4">Balance Financiero</h1>
-    <p class="lead">Donde se encontra la información sobre sus movimientos</p>
-    <hr class="my-4">
-    <p>En Pickles Banking otorgamos un resumen de cuentas. El dinero total disponible en su cuenta es de ${{$salary}}.
-    </p>
-    {{-- Open modal --}}
-    <button class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#moreInformation">Para tener
-        mas informacíon</button>
+<div class="jumbotron jumbotron-fluid text-dark"
+    style="background-image: url('https://source.unsplash.com/1600x900/?money'); background-size: cover;">
+    <div class="container transbox">
+        <h1 class="display-4">Balance Financiero</h1>
+        <p class="lead">Donde se encontra la información sobre sus movimientos</p>
+        <hr class="my-4">
+        <p>En Pickles Banking otorgamos un resumen de cuentas. El dinero total disponible en su cuenta es de
+            ${{$salary}}.
+        </p>
+        {{-- Open modal --}}
+        <button class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#moreInformation">Para
+            tener
+            mas informacíon</button>
+    </div>
 </div>
 
 
