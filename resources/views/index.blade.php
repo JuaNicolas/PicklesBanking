@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Pickles Banking - @yield('title')</title>
     <link rel="stylesheet" href="/css/app.css" type="text/css">
+    <script src="/js/app.js"></script>
 </head>
 
 <body>
@@ -15,4 +16,4 @@
     @include('partials.footer')
 </body>
 
-</html> 
+</html>
