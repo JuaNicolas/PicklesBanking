@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Balance;
 use App\Http\Resources\BalanceCollection;
 
@@ -15,7 +16,7 @@ class BalanceController extends Controller
     public function index()
     {
         //* Get Balance movements
-        $balances = new BalanceCollection(Balance::all());
+        $balances = new BalanceCollection(Balance::all()->sortByDesc('created_at'));
 
         $salary = 0;
 

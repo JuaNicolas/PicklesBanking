@@ -16,6 +16,7 @@ Route::view('/', 'welcome');
 
 //* Services
 Route::get('dashboard/services', 'ServiceController@index');
+Route::post('dashboard/services/pay', 'ServiceController@pay')->name('service.pay');
 
 //* Investments
 Route::get('dashboard/investments', 'InvestmentController@index');
