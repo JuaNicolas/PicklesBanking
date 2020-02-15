@@ -12,7 +12,7 @@
         <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam in quia natus magnam ducimus
             quas molestias velit vero maiores. Eaque sunt laudantium voluptas. Fugiat molestiae ipsa delectus iusto vel
             quod.</p>
-        <a href="/login" class="btn btn-success btn-lg my-2">Ingresa a tu cuenta</a>
+        <a href="/dashboard/balance" class="btn btn-success btn-lg my-2">Mira tus últimos movimientos</a>
     </div>
 </div>
 <div class="container">
