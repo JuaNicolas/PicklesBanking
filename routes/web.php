@@ -21,4 +21,4 @@ Route::get('dashboard/services', 'ServiceController@index');
 Route::get('dashboard/investments', 'InvestmentController@index');
 
 //* Movements
-Route::get('dashboard/balance', 'MovementController@index');
+Route::get('dashboard/balance', 'BalanceController@index');

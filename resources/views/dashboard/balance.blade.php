@@ -9,7 +9,7 @@
     <h1 class="display-4">Balance Financiero</h1>
     <p class="lead">Donde se encontra la información sobre sus movimientos</p>
     <hr class="my-4">
-    <p>En Pickles Banking otorgamos un resumen de cuentas. El dinero total disponible en su cuenta es de ${{$balance}}.
+    <p>En Pickles Banking otorgamos un resumen de cuentas. El dinero total disponible en su cuenta es de ${{$salary}}.
     </p>
     {{-- Open modal --}}
     <button class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#moreInformation">Para tener
@@ -22,32 +22,18 @@
         <thead class="thead-light">
             <tr>
                 <th scope="col">Fecha</th>
-                <th scope="col">Servicio</th>
                 <th scope="col">Descripcion</th>
                 <th scope="col">Importe</th>
-                <th scope="col">Estado</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($movement as $item)
+            @foreach ($balances as $item)
             <tr>
                 <th scope="row">{{ date('d-m-Y', strtotime($item->created_at)) }}</th>
-                <td>{{ $item->service_name }}</td>
+
                 <td>{{ $item->description }}</td>
                 <td>{{ $item->total }}</td>
 
-                @switch ($item->status_name)
-                @case ('Aceptado')
-                <td class="text-success">{{ $item->status_name }}</td>
-                @break;
-                @case ('Pendiente')
-                <td class="text-info">{{ $item->status_name }}</td>
-                @break;
-                @case ('Cancelado')
-                @case ('Rechazado')
-                <td class="text-danger">{{ $item->status_name }}</td>
-                @break;
-                @endswitch
             </tr>
             @endforeach
         </tbody>
