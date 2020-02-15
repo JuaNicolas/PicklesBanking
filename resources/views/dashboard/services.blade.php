@@ -21,19 +21,14 @@
 <div class="container">
     <div class="row">
         @foreach ($services as $item)
-        <div class="col-6 col-md-4 col-lg-3">
-            <div class="card  border-success mb-3">
+        <div class="col-6 col-md-4 col-lg-3 mb-3">
+            <div class="card  border-primary">
                 <h5 class="card-header text-center text-muted">
                     Acciones
                 </h5>
                 <div class="card-body text-center">
                     <h5 class="card-title">{{$item->service_name}}</h5>
                     <p class="card-text">Código de referencia {{ $item->reference_number }}</p>
-
-                    {{-- <a href="{{ route('investment.sell', ['id' => $item->id]) }}"
-                    class="btn btn-block btn-info text-white">Vender</a>
-                    <a href="{{ route('investment.buy', ['id' => $item->id]) }}"
-                        class="btn btn-block btn-success">Comprar</a> --}}
                 </div>
                 <div class="card-footer text-center text-muted">
                     <h6 class="card-subtitle mb-2 text-muted">{{ date('d-m-Y', strtotime($item->created_at)) }}</h6>

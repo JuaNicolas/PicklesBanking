@@ -10,14 +10,10 @@
 
         <div class="collapse navbar-collapse" id="navBar">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item {{ request()->is('balance*') ? 'active' : '' }}">
+                <li class="nav-item {{ request()->is('*/balance*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ url('dashboard/balance')}}">Balance</a>
                 </li>
-                {{-- <a href="{{ route('service.formCreate') }}" class="btn btn-lg btn-info">Subir un
-                    servicio</a>
-                <a href="{{ route('service.formPay') }}" class="btn btn-lg btn-success">Pagar
-                    servicio</a> --}}
-                <li class="nav-item dropdown">
+                <li class="dropdown {{ request()->is('*/services*') ||  request()->is('forms*') ? 'active' : '' }}">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Servicios
@@ -29,10 +25,7 @@
                         <a class="dropdown-item" href="{{ route('service.index') }}">Ver servicios disponibles</a>
                     </div>
                 </li>
-                <li class="nav-item {{ (request()->is('services*')) ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ url('dashboard/services')}}">Services</a>
-                </li>
-                <li class="nav-item {{ (request()->is('investments*')) ? 'active' : '' }}">
+                <li class="nav-item {{ (request()->is('*/investments*'))  ? 'active' : '' }}">
                     <a class="nav-link" href="{{ url('dashboard/investments')}}">Investments</a>
                 </li>
             </ul>

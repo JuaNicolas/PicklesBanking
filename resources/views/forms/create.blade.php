@@ -24,8 +24,8 @@
                     <input type="text" class="form-control" name="name" id="name">
                 </div>
                 <div class="form-group">
-                    <label for="numRef">Numero de Referencia</label>
-                    <input type="text" class="form-control" name="numRef" id="numRef">
+                    <label for="numRef">Número de Referencia</label>
+                    <input type="number" class="form-control" name="numRef" id="numRef">
                 </div>
                 <div class="form-group text-right">
                     <input type="submit" class="btn btn-primary" value="Crear Servicio">
