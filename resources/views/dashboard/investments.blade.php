@@ -7,90 +7,33 @@
 @section('content')
 
 <div class="container">
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active" id="myStocks-tab" data-toggle="tab" href="#myStocks" role="tab"
-                aria-controls="Servicios" aria-selected="true">Mis acciones</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="buyStocks-tab" data-toggle="tab" href="#buyStocks" role="tab"
-                aria-controls="Aceptados" aria-selected="false">Comprar Acciones</a>
-        </li>
-
-    </ul>
-    <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="myStocks" role="tabpanel" aria-labelledby="myStocks">
-            <div class="row">
-                @foreach ($investment_movements as $item)
-                <div class="col-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">{{$item->stock_name}}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ date('d-m-Y', strtotime($item->created_at)) }}
-                            </h6>
-                            <p class="card-text">Valor unitario ${{ $item->unit_value }}</p>
-                            <p class="card-text">Cantidad de acciones compradas {{ $item->amount }}</p>
-                            <p class="card-text">Por un total de ${{ $item->total }}</p>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-        <div class="tab-pane fade" id="buyStocks" role="tabpanel" aria-labelledby="buyStocks">
-            <div class="row">
-                @foreach ($share_stocks as $item)
-                <div class="col-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Accion {{$item->stock_name}}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ date('d-m-Y', strtotime($item->created_at)) }}
-                            </h6>
-
-
-                            <p class="card-text text-success">Valor de cada accion: ${{ $item->unit_value }}</p>
-
-                            <button type="button" class="btn btn-primary" onclick="getInformation({{$item->id}})"
-                                data-toggle="modal" data-target="#exampleModal">Comprar acciones</button>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
+    <div class="row">
+        <div class="col">
+            <h1>Saldo disponible {{$salary}}</h1>
         </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+    <div class="row">
+        @foreach ($investments as $item)
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="card  border-success mb-3">
+                <h5 class="card-header text-center text-muted">
+                    Acciones
+                </h5>
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{$item->bussiness}}</h5>
+                    <p class="card-text">Valor unitario ${{ $item->unit_value }}</p>
+                    <p class="card-text">Cantidad de acciones compradas {{ $item->share_stock_amount }}</p>
+                    <p class="card-text">Por un total de ${{ $item->amount }}</p>
+                    <a href="{{ route('investment.sell', ['id' => $item->id]) }}" class="btn btn-block btn-info text-white">Vender</a>
+                    <a href="{{ route('investment.buy', ['id' => $item->id]) }}" class="btn btn-block btn-success">Comprar</a>
                 </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="formGroupExampleInput">Example label</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput"
-                                placeholder="Example input placeholder">
-                        </div>
-                        <p id="total"></p>
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Example textarea</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" onclick="change()">Comprar</button>
+                <div class="card-footer text-center text-muted">
+                    <h6 class="card-subtitle mb-2 text-muted">{{ date('d-m-Y', strtotime($item->created_at)) }}</h6>
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
 </div>
 @endsection
