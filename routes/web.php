@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//* Views
+Route::view('/', 'welcome');
+
+//* Services
+Route::get('dashboard/services', 'ServiceController@index');
+
+//* Investments
+Route::get('dashboard/investments', 'InvestmentController@index');
+
+//* Movements
+Route::get('dashboard/balance', 'MovementController@index');
