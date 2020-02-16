@@ -4,7 +4,6 @@ const amount = $('#amount')
 
 verifySelect = () => {
     const serviceName = service.val()
-    console.log(serviceName)
     if (serviceName) {  
         service.addClass('is-valid')
         service.removeClass('is-invalid')
@@ -30,7 +29,6 @@ verifyInput = () => {
 }
 
 validateButtonPay = () => {
-    console.log('se ejecuto')
     const button = $('#pay')
     const condition = service.hasClass('is-valid') && amount.hasClass('is-valid')
 
