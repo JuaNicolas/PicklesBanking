@@ -3,7 +3,7 @@ const amount = $('#amount')
 
 
 verifySelect = () => {
-    const serviceName = $('#options').val()
+    const serviceName = service.val()
 
     if (serviceName) {
         service.addClass('is-valid')
@@ -17,7 +17,7 @@ verifySelect = () => {
 
 
 verifyInput = () => {
-    const serviceAmount = $('#amount').val()
+    const serviceAmount = amount.val()
 
     if (serviceAmount) {
         amount.addClass('is-valid')

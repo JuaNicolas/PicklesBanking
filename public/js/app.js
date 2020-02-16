@@ -37058,6 +37058,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_bootstrap__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _formPay__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./formPay */ "./resources/js/formPay.js");
 /* harmony import */ var _formPay__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_formPay__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _formCreate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./formCreate */ "./resources/js/formCreate.js");
+/* harmony import */ var _formCreate__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_formCreate__WEBPACK_IMPORTED_MODULE_2__);
 /**
  * First, we will load all of this project's Javascript utilities and other
  * dependencies. Then, we will be ready to develop a robust and powerful
@@ -37065,7 +37067,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 
-console.log('anda');
+
 
 /***/ }),
 
@@ -37114,6 +37116,68 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/formCreate.js":
+/*!************************************!*\
+  !*** ./resources/js/formCreate.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var name = $('#name');
+var serviceReference = $('#numRef');
+
+verifyName = function verifyName() {
+  var serviceName = name.val();
+  var validation = onlyLetter(serviceName);
+
+  if (validation) {
+    name.addClass('is-valid');
+    name.removeClass('is-invalid');
+  } else {
+    name.addClass('is-invalid');
+    name.removeClass('is-valid');
+  }
+
+  validateButton();
+};
+
+verifyReference = function verifyReference() {
+  var serviceReferenceNumber = serviceReference.val();
+
+  if (serviceReferenceNumber) {
+    serviceReference.addClass('is-valid');
+    serviceReference.removeClass('is-invalid');
+  } else {
+    serviceReference.addClass('is-invalid');
+    serviceReference.removeClass('is-valid');
+  }
+
+  validateButton();
+};
+
+onlyLetter = function onlyLetter(value) {
+  var letters = /^[A-Za-z]+$/;
+
+  if (value.match(letters)) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+validateButton = function validateButton() {
+  var button = $('#create');
+  var condition = name.hasClass('is-valid') && serviceReference.hasClass('is-valid');
+
+  if (condition) {
+    button.prop('disabled', false);
+  } else {
+    button.prop('disabled', true);
+  }
+};
+
+/***/ }),
+
 /***/ "./resources/js/formPay.js":
 /*!*********************************!*\
   !*** ./resources/js/formPay.js ***!
@@ -37125,7 +37189,7 @@ var service = $('#options');
 var amount = $('#amount');
 
 verifySelect = function verifySelect() {
-  var serviceName = $('#options').val();
+  var serviceName = service.val();
 
   if (serviceName) {
     service.addClass('is-valid');
@@ -37139,7 +37203,7 @@ verifySelect = function verifySelect() {
 };
 
 verifyInput = function verifyInput() {
-  var serviceAmount = $('#amount').val();
+  var serviceAmount = amount.val();
 
   if (serviceAmount) {
     amount.addClass('is-valid');

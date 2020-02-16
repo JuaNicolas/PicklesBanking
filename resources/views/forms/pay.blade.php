@@ -32,7 +32,7 @@
                     <label for="amount">Importe</label>
                     <input type="number" class="form-control" id="amount" name="amount" onchange="verifyInput()" onblur="verifyInput()" oninput="verifyInput()">
                 </div>
-                <div class="form-group">
+                <div class="form-group text-right">
                     <button type="submit" class="btn btn-lg btn-success" id="pay" disabled>Pagar Servicio</button>
                 </div>
             </form>

@@ -22,14 +22,14 @@
                 @csrf
                 <div class="form-group">
                     <label for="name">Nombre del Servicio</label>
-                    <input type="text" class="form-control" name="name" id="name">
+                    <input type="text" class="form-control" name="name" id="name" onchange="verifyName()" onblur="verifyName()" oninput="verifyName()">
                 </div>
                 <div class="form-group">
                     <label for="numRef">Número de Referencia</label>
-                    <input type="number" class="form-control" name="numRef" id="numRef">
+                    <input type="number" class="form-control" name="numRef" id="numRef" onchange="verifyReference()" onblur="verifyReference()" oninput="verifyReference()">
                 </div>
                 <div class="form-group text-right">
-                    <input type="submit" class="btn btn-primary" value="Crear Servicio">
+                    <button type="submit" class="btn btn-primary" id="create" disabled>Crear Servicio</button>
                 </div>
             </form>
         </div>

@@ -6,4 +6,4 @@
 
 import './bootstrap';
 import './formPay';
-console.log('anda')
+import './formCreate';
