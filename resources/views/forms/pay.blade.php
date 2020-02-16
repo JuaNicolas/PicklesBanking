@@ -22,7 +22,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="options">Elige un servicio a pagar</label>
-                    <select multiple class="form-control" id="options" name="options">
+                    <select multiple class="form-control" id="options" name="options" onchange="verifySelect()">
                         @foreach ($services as $item)
                         <option value="{{ $item->service_name }}">{{ $item->service_name }}</option>
                         @endforeach
@@ -30,11 +30,10 @@
                 </div>
                 <div class="form-group">
                     <label for="amount">Importe</label>
-                    <input type="number" class="form-control" id="amount" name="amount">
+                    <input type="number" class="form-control" id="amount" name="amount" onchange="verifyInput()" onblur="verifyInput()" oninput="verifyInput()">
                 </div>
-
                 <div class="form-group">
-                    <input type="submit" class="btn btn-success" value="Pagar Servicio">
+                    <button type="submit" class="btn btn-lg btn-success" id="pay" disabled>Pagar Servicio</button>
                 </div>
             </form>
         </div>

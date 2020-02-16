@@ -12,9 +12,34 @@ class BalanceSeeder extends Seeder
      */
     public function run()
     {
-        $balance = [[
+        $balance = [
+            [
             'description' => 'Regalo de bienvenida',
-            'total' => 25000,
+            'total' => 30000,
+        ],
+            [
+            'description' => 'Compra inicial de acciones de Vias Argentinas',
+            'total' => -2446,
+        ],
+            [
+            'description' => 'Compra inicial de acciones de Metrotel',
+            'total' => -2387.92,
+        ],
+            [
+            'description' => 'Compra inicial de acciones de FaySac',
+            'total' => -1492.65,
+        ],
+            [
+            'description' => 'Compra inicial de acciones de GasTrol',
+            'total' => -11131.39,
+        ],
+            [
+            'description' => 'Compra inicial de acciones de Surrinas',
+            'total' => -2201.01,
+        ],
+            [
+            'description' => 'Compra inicial de acciones de AguasClaras',
+            'total' => -5508.58,
         ],
         ];
 

@@ -18,6 +18,7 @@
     <div class="row">
         <div class="col-6 offset-3">
             <form action="{{ route('service.store') }}" method="post">
+                @method('POST')
                 @csrf
                 <div class="form-group">
                     <label for="name">Nombre del Servicio</label>

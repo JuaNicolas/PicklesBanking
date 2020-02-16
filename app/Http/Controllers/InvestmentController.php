@@ -47,7 +47,7 @@ class InvestmentController extends Controller
         $investment = new InvestmentResource(Investment::findOrFail($id));
         $salary = $this->getSalary();
 
-        if ($investment->share_stock_amount > 0 && $salary >= 0) {
+        if ($investment->share_stock_amount > 0) {
 
             $invUpdate = Investment::find($id);
             $invUpdate->share_stock_amount -= 1;

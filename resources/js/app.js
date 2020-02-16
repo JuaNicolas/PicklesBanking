@@ -4,4 +4,6 @@
  * application frontend using useful Laravel and JavaScript libraries.
  */
 
-require('./bootstrap');
+import './bootstrap';
+import './formPay';
+console.log('anda')
