@@ -10,9 +10,13 @@
 </head>
 
 <body>
-    @include('partials.header')
-    <main>@yield('content')</main>
-    @include('partials.footer')
+    <div id="page-container">
+        <div id="content-wrap">
+            @include('partials.header')
+            <main>@yield('content')</main>
+        </div>
+        @include('partials.footer')
+    </div>
     
     <script src="/js/app.js"></script>
 </body>
