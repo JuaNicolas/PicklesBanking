@@ -7,7 +7,7 @@
 @section('content')
 <div class="jumbotron text-light"
     style="background-image: url('https://source.unsplash.com/1600x900/?bussiness'); background-size: cover">
-    <div class="container">
+    <div class="container transbox">
         <h1 class="display-3">Administra tus cuentas de modo fácil</h1>
         <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam in quia natus magnam ducimus
             quas molestias velit vero maiores. Eaque sunt laudantium voluptas. Fugiat molestiae ipsa delectus iusto vel
@@ -21,7 +21,7 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Conveniente</h5>
-                    <p class="card-text">Administra todas tus cuentas en un mismo lugar</p>
+                    <p class="card-text">Administra todas tus cuentas en un mismo lugar, olvidese de ir al banco!</p>
                 </div>
             </div>
         </div>
@@ -38,7 +38,8 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Fácil de usar</h5>
-                    <p class="card-text">Organiza todo con un click</p>
+                    <p class="card-text">Organiza todo con un click, no se preocupe por tener que entender como
+                        funciona, úselo</p>
                 </div>
             </div>
         </div>

@@ -10885,10 +10885,9 @@ a.text-dark:focus {
 }
 
 .transbox {
-  background-color: #ffffff;
-  opacity: 0.6;
+  background-color: rgba(255, 255, 255, 0.6);
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 16px;
 }
 
 .transbox h1,

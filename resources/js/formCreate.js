@@ -30,7 +30,7 @@ verifyReference = () => {
 }
 
 onlyLetter = (value) => {
-    const letters = /^[A-Za-z]+$/;
+    const letters = /([a-zA-Z])\w+/;
     if (value.match(letters)) {
         return true;
     }

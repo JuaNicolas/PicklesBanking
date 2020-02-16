@@ -37156,7 +37156,7 @@ verifyReference = function verifyReference() {
 };
 
 onlyLetter = function onlyLetter(value) {
-  var letters = /^[A-Za-z]+$/;
+  var letters = /([a-zA-Z])\w+/;
 
   if (value.match(letters)) {
     return true;

@@ -22,11 +22,16 @@
                 @csrf
                 <div class="form-group">
                     <label for="name">Nombre del Servicio</label>
-                    <input type="text" class="form-control" name="name" id="name" onchange="verifyName()" onblur="verifyName()" oninput="verifyName()">
+                    <input type="text" class="form-control" name="name" id="name" onchange="verifyName()"
+                        onblur="verifyName()" oninput="verifyName()" aria-describedby="serviceNameHelpBlock">
+                    <small id="serviceNameHelpBlock" class="form-text text-muted">
+                       El nombre del servicio debe ser letra solamente, puede incluir espacios en blanco.
+                    </small>
                 </div>
                 <div class="form-group">
                     <label for="numRef">Número de Referencia</label>
-                    <input type="number" class="form-control" name="numRef" id="numRef" onchange="verifyReference()" onblur="verifyReference()" oninput="verifyReference()">
+                    <input type="number" class="form-control" name="numRef" id="numRef" onchange="verifyReference()"
+                        onblur="verifyReference()" oninput="verifyReference()">
                 </div>
                 <div class="form-group text-right">
                     <button type="submit" class="btn btn-primary" id="create" disabled>Crear Servicio</button>

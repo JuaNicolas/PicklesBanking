@@ -14,39 +14,11 @@
         <p>En Pickles Banking otorgamos un resumen de cuentas. El dinero total disponible en su cuenta es de
             ${{$salary}}.
         </p>
-        {{-- Open modal --}}
         <button class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#moreInformation">Para
             tener
             mas informacíon</button>
     </div>
 </div>
-
-
-<div class="container">
-    <table class="table table-hover table-striped table-borderless">
-        <thead class="thead-light">
-            <tr>
-                <th scope="col">Fecha</th>
-                <th scope="col">Descripcion</th>
-                <th scope="col">Importe</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($balances as $item)
-            <tr>
-                <th scope="row">{{ date('d-m-Y', strtotime($item->created_at)) }}</th>
-
-                <td>{{ $item->description }}</td>
-                <td>{{ $item->total }}</td>
-
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-</div>
-
-
-{{-- Modal--}}
 <div class="modal fade" id="moreInformation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -67,4 +39,25 @@
         </div>
     </div>
 </div>
+<div class="container">
+    <table class="table table-hover table-striped table-borderless">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Importe</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($balances as $item)
+            <tr>
+                <th scope="row">{{ date('d-m-Y', strtotime($item->created_at)) }}</th>
+                <td>{{ $item->description }}</td>
+                <td>{{ $item->total }}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+
 @endsection
