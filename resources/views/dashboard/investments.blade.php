@@ -40,9 +40,9 @@
     </div>
 </div>
 <div class="container">
-    <div class="row">
-        <div class="col text-center">
-            <h1>Saldo disponible {{$salary}}</h1>
+    <div class="row py-1">
+        <div class="col-6 offset-3 text-center transbox-dark">
+            <h1>El saldo disponible es de ${{$salary}}</h1>
         </div>
     </div>
     <div class="row">
