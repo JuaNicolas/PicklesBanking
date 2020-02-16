@@ -2,12 +2,12 @@
     <div class="container text-center ">
         <div class="row">
             <div class="col py-2">
-                <button class="btn btn-secondary btn-lg text-white"
-                    href="{{ url('dashboard/balance')}}">Balance</button>
-                <button class="btn btn-secondary btn-lg text-white"
-                    href="{{ url('dashboard/services')}}">Servicios</button>
-                <button class="btn btn-secondary btn-lg text-white"
-                    href="{{ url('dashboard/investments')}}">Inversiones</button>
+                <a class="btn btn-secondary btn-lg text-white"
+                    href="{{ url('dashboard/balance')}}">Balance</a>
+                <a class="btn btn-secondary btn-lg text-white"
+                    href="{{ url('dashboard/services')}}">Servicios</a>
+                <a class="btn btn-secondary btn-lg text-white"
+                    href="{{ url('dashboard/investments')}}">Inversiones</a>
             </div>
         </div>
         <div class="row">

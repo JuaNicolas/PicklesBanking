@@ -13,7 +13,7 @@ verifyName = () => {
         name.addClass('is-invalid')
         name.removeClass('is-valid')
     }
-    validateButton()
+    validateButtonCreate()
 }
 
 verifyReference = () => {
@@ -26,7 +26,7 @@ verifyReference = () => {
         serviceReference.addClass('is-invalid')
         serviceReference.removeClass('is-valid')
     }
-    validateButton()
+    validateButtonCreate()
 }
 
 onlyLetter = (value) => {
@@ -39,7 +39,7 @@ onlyLetter = (value) => {
     }
 }
 
-validateButton = () => {
+validateButtonCreate = () => {
     const button = $('#create')
     const condition = name.hasClass('is-valid') && serviceReference.hasClass('is-valid')
 
